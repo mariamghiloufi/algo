@@ -1,0 +1,38 @@
+ALGORITHM chaine_de_caractère
+VAR
+    i,j,k : INTEGER;
+    c : CHAR;
+    chaine : STRING;
+BEGIN
+i = 1;
+REPEAT
+    Read(c);
+    chaine[i] = c;
+    i = i + 1 ;
+UNTIL (c = '.');
+
+    Write("la longueur de la chaine = ", i);
+
+    FOR j FROM 1 to i STEP 1 DO
+   IF (chaine[j]=' ')THEN
+    k:= k+1;
+    END_IF
+    END_FOR
+
+Write(" nombre de mots dans la phrase est ", k+1);
+
+k = 0;
+ for j from 1 to i step 1 do 
+ SWITCH (chaine[j]) DO
+     case 'a' :
+     case 'e' :
+      case 'i' :
+     case 'o' :
+      case 'u' :
+     case 'y' : k = k + 1; break;
+     default : write ("ce n'est pas un voyelle");
+ END_SWITCH
+ END_FOR
+Write("nombre de voyelle est ", k);
+
+END
